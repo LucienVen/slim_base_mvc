@@ -17,7 +17,7 @@ class Test extends Action
      */
     public function test()
     {
-        return $this->success(200, 'success', $this->_container->get('db'));
+        return $this->success(200, 'success', "hello, world");
     }
 
     /**
@@ -36,9 +36,15 @@ class Test extends Action
         $testModel = new TestModel();
         $res = $testModel->get();
         return $this->success(200, 'success', $res);
+    }
 
-
-
+    /**
+     * 测试monolog 日志记录
+     */
+    public function log()
+    {
+        $this->_container->get('logger')->addInfo('test logger');
+        echo 'logger runing';
     }
 
     

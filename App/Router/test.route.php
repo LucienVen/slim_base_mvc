@@ -15,3 +15,6 @@ $app->get('/hello/{name}', function ($request, $response, $args) {
 $app->get('/', '\App\Action\Test:test');
 
 $app->get('/db', '\App\Action\Test:db');
+
+$app->get('/log', '\App\Action\Test:log');
+

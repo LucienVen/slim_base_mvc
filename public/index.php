@@ -15,7 +15,7 @@ define("CORE_PATH", __DIR__ . "/../Core");
 define("SETTING_PATH", APP_PATH . "/Settings.php");
 
 // logger path
-// define()
+define("LOG_PATH", __DIR__ . "/../Log");
 
 // init Framework
 require CORE_PATH . "/Init.php";
