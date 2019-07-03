@@ -4,3 +4,8 @@
  */
 
 $container = $app->getContainer();
+
+
+$container['logger'] = function($c){
+    $logger = new \Monolog\Logger('my_logger');
+};

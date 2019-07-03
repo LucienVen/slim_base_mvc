@@ -14,6 +14,9 @@ define("CORE_PATH", __DIR__ . "/../Core");
 // config path
 define("SETTING_PATH", APP_PATH . "/Settings.php");
 
+// logger path
+// define()
+
 // init Framework
 require CORE_PATH . "/Init.php";
 

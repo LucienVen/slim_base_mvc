@@ -4,18 +4,42 @@
  * Test Action
  */
 
- namespace App\Action;
- 
- use Core\Action;
+namespace App\Action;
 
- class Test extends Action
- {
-     /**
-      * hello world 测试
-      */
-      public function test()
-      {
-          return $this->success(200, 'success');
-      }
- }
- 
+use Core\Action;
+// use Illuminate\Support\Facades\Config;
+use App\Model\Test as TestModel;
+
+class Test extends Action
+{
+    /**
+     * hello world 测试
+     */
+    public function test()
+    {
+        return $this->success(200, 'success', $this->_container->get('db'));
+    }
+
+    /**
+     * 测试数据库连接
+     */
+    public function db()
+    {
+        // $a = 111;
+        // $capsule = $this->_container->get('db');
+        // $res = $capsule->table('user')->find(1);
+        // return $this->success(200, 'success', $res);
+        // $testModel = new TestModel();
+
+        // $db = $this->_container->get('db');
+        // $db->bootEloquent();
+        $testModel = new TestModel();
+        $res = $testModel->get();
+        return $this->success(200, 'success', $res);
+
+
+
+    }
+
+    
+}
