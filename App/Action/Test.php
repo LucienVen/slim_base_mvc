@@ -47,5 +47,13 @@ class Test extends Action
         echo 'logger runing';
     }
 
+    /**
+     * 测试路由中间件
+     */
+    public function testMiddleware()
+    {
+        $this->_response->getBody()->write("[testing! testMiddleware]");
+    }
+
     
 }
