@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Middleware;
 
 class SimpleMiddleware
